@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class UserController extends Controller
 {
@@ -21,7 +22,7 @@ class UserController extends Controller
     {
         $user=[
         'email' => 'wahab@gmail.com',
-        'password'=>'123456789',
+        'password'=> '123456789',
      ];
          User::create($user);
          $newUser = User::where('email', 'wahab@gmail.com')->first();
