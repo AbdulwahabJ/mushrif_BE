@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Controller\UserController;
+use App\Http\Controller\UserController;
 use App\Controller\Api\AuthController;
 
 
