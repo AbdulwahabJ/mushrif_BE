@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class UserController extends Controller
 {
@@ -11,7 +12,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -19,7 +20,14 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user=[
+        'email' => 'wahab@gmail.com',
+        'password'=>'123456789',
+     ];
+         User::create($user);
+         $newUser = User::where('email', 'wahab@gmail.com')->first();
+
+         return response()->json($newUser);
     }
 
     /**
