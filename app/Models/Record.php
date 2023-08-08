@@ -9,11 +9,20 @@ class Record extends Model
 {
     use HasFactory;
 
+    protected $table = "records";
 
     public function fieldsupervisor(){
         return $this->belongsTo(User::class, 'id', 'fieldsupervisor_id');
     }
     public function techsupervisor(){
         return $this->belongsTo(User::class, 'id', 'techsupervisor_id');
+    }
+
+    public function reportAnswers(){
+        return $this->hasMany(ReportAnswer::class ,'report_id','id');
+    }
+
+    public function recordAnswers(){
+        return $this->hasMany(RecordAnswer::class ,'record_id','id');
     }
 }

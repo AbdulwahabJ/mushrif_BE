@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class QuestionRecordType extends Model
 {
     use HasFactory;
+    public function recordQuestion(){
+        return $this->belongsTo(RecordQuestion::class);
+    }
 }

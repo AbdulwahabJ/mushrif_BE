@@ -4,25 +4,29 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateQuestionsRecordsTypesTable extends Migration
 {
     /**
      * Run the migrations.
+     *
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
-        Schema::create('questions_records_types', function (Blueprint $table) {
-            $table->id();
-            $table->String('name');
+        Schema::create('question_record_types', function (Blueprint $table) {
+            $table->id()->unique();
             $table->timestamps();
+            $table->string('name');
         });
     }
 
     /**
      * Reverse the migrations.
+     *
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('questions_records_types');
     }
-};
+}
